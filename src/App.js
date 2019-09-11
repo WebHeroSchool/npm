@@ -17,12 +17,10 @@ function App() {
         {autumn === true &&
         <p>На дворе осень, а это значит, что:</p>
         }
-
         {(autumn) ? 
           <p style={{color: '#00FFFF'}}>"Winter is coming!" :))</p> : 
           <p>Это React приложение не знает какое сейчас время года, но точно не осень!</p>
         }
-
         <p>"true"{true}, "false"{false}, "null"{null} и "undefined"{undefined} не выводятся в разметку</p>
 
         <a
