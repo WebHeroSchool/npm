@@ -19,7 +19,7 @@ function App() {
         }
 
         {(autumn) ? 
-        	 <p style={{color: '#00FFFF'}}>"Winter is coming!" :))</p> : 
+          <p style={{color: '#00FFFF'}}>"Winter is coming!" :))</p> : 
           <p>Это React приложение не знает какое сейчас время года, но точно не осень!</p>
         }
 
