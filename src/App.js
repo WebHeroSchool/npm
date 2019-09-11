@@ -37,13 +37,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-// Создай pull-request, в котором будут примеры: 	
-
-// - вывода undefined, null, false и true через {};
-
-
-// - не забудь добавить в корень проекта файл now.json;
