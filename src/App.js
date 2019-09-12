@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {count, length} from './numbers';
 
 const school = 'WebHeroSchool'
 let age = 1;
@@ -22,6 +23,7 @@ function App() {
           <p>Это React приложение не знает какое сейчас время года, но точно не осень!</p>
         }
         <p>"true"{true}, "false"{false}, "null"{null} и "undefined"{undefined} не выводятся в разметку</p>
+        <p>Error {count * length}</p>
 
         <a
           className="App-link"
