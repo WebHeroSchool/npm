@@ -11,7 +11,7 @@ const App = () => (
       fontSize: '50px',
       color: '#696969'
     }}>Важные дела:</h1>
-    <InputItem/>
+    <InputItem />
     <ItemList importantCase={importantCase} />
     <Footer count={3} />
   </div>);
