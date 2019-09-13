@@ -3,6 +3,8 @@ import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 
+const importantCase = 'Изучить React';
+
 const App = () => (
   <div>
     <h1 style = {{
@@ -10,8 +12,8 @@ const App = () => (
       color: '#696969'
     }}>Важные дела:</h1>
     <InputItem />
-    <ItemList />
-    <Footer />
+    <ItemList importantCase={importantCase} />
+    <Footer count={3} />
   </div>);
 
 export default App;
