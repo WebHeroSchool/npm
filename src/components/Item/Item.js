@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Item = () => (<span>Очень важное дело!</span>);
+const Item = ({ importantCase }) => (<span>{importantCase}</span>);
 
 export default Item;
