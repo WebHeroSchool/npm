@@ -1,0 +1,11 @@
+.wrap {
+	 margin: auto;
+	 height: 400px;
+  width: 350px;
+  font-family: Comic Sans MS;
+}
+
+.wrap__title {
+  font-size: 50px;
+  color: #696969;
+}
