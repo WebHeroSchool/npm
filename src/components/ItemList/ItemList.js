@@ -1,11 +1,9 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-const ItemList = ({ importantCase }) => (
+const ItemList = ({ items }) => (
   <ul>
-    <li><Item importantCase={importantCase} /></li>
-    <li><Item importantCase={'Подготовиться к собеседованию'} /></li>
-    <li><Item importantCase={'Найти работу!'} /></li>
+    {items.map(item => <li key={item.value}><Item value={item.value} /></li>)}
   </ul>);
 
 export default ItemList;
