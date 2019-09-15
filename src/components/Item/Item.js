@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Item = ({ importantCase }) => (<span>{importantCase}</span>);
+const Item = ({ value }) => (<span>{value}</span>);
 
 export default Item;
