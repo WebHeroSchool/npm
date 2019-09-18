@@ -1,6 +1,6 @@
 import React from 'react';
 import footerStyles from './Footer.module.css';
-import ButtonShowingActiveTodos from '../ButtonShowActiveTodos/ButtonShowActiveTodos';
+import ButtonShowingActiveTodos from '../ButtonShowingActiveTodos/ButtonShowingActiveTodos';
 
 const Footer = ({ count }) => (
   <div className={footerStyles.footer}>
