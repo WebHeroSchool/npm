@@ -1,14 +1,17 @@
 import React from 'react';
 import footerStyles from './Footer.module.css';
+import ButtonShowingAllTodos from '../ButtonShowingAllTodos/ButtonShowingAllTodos';
 import ButtonShowingActiveTodos from '../ButtonShowingActiveTodos/ButtonShowingActiveTodos';
+import ButtonShowingCompletedTodos from '../ButtonShowingCompletedTodos/ButtonShowingCompletedTodos';
+import ButtonClearCompletedTodos from '../ButtonClearCompletedTodos/ButtonClearCompletedTodos';
 
 const Footer = ({ count }) => (
   <div className={footerStyles.footer}>
     <div className={footerStyles.left}>{count} items left</div>
-    <button className={footerStyles.all}>All</button>
+    <ButtonShowingAllTodos />
     <ButtonShowingActiveTodos />
-    <button className={footerStyles.completed}>Completed</button>
-    <button className={footerStyles.clear}>Clear completed</button>
+    <ButtonShowingCompletedTodos />
+    <ButtonClearCompletedTodos />
   </div>
 );
 

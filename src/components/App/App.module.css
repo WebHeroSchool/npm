@@ -18,3 +18,15 @@
 .done {
   color: #c4c4c4;
 }
+
+.icon-of-unfinished {
+  list-style-type: none;
+  background: url(./image/isntDone.PNG) no-repeat 0 12px;
+  padding-left: 30px;
+}
+
+.icon-of-done {
+  list-style-type: none;
+  background: url(./image/isDone.PNG) no-repeat 0 12px;
+  padding-left: 30px;
+}

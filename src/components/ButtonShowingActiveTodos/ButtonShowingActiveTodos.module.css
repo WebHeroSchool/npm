@@ -1,0 +1,9 @@
+.button {
+  margin-right: 10px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}

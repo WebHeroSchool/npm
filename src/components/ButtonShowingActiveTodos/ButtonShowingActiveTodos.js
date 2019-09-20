@@ -1,14 +1,8 @@
 import React from 'react';
-import ItemList from '../ItemList/ItemList';
-
-const showActiveTodos = ({ items }) => {
-    return (
-        <ItemList items={items.filter(item => item.isDone === false)} />
-    )
-}
+import buttonShowingActiveTodosStyles from './ButtonShowingActiveTodos.module.css';
 
 const ButtonShowingActiveTodos = () => (<div>
-    <button onClick='showActiveTodos()'>Active</button>
+    <button className={buttonShowingActiveTodosStyles.button}>Active</button>
   </div>);
 
 export default ButtonShowingActiveTodos;

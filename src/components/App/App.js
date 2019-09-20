@@ -20,7 +20,7 @@ const App = () => {
     },
     {
       value: 'Тест',
-      isDone: true
+      isDone: true,
     }
   ];
   const counctUnfulfilled = items.filter(item => item.isDone === false);
