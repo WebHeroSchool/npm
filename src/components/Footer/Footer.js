@@ -1,7 +1,14 @@
 import React from 'react';
+import footerStyles from './Footer.module.css';
 
 const Footer = ({ count }) => (
-  <div>Осталось выполнить дел: {count}</div>
+  <div className={footerStyles.footer}>
+    <div className={footerStyles.left}>{count} items left</div>
+    <button className={footerStyles['button-show-all']}>All</button>
+    <button className={footerStyles['button-show-active']}>Active</button>
+    <button className={footerStyles['button-show-completed']}>Completed</button>
+    <button className={footerStyles['button-clear-completed']}>Clear completed</button>
+  </div>
 );
 
 export default Footer;
