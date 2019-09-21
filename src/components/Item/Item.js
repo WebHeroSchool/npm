@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonClearFocusedTodo from '../ButtonClearFocusedTodo/ButtonClearFocusedTodo';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import classnames from 'classnames';
 import styles from '../App/App.module.css';
 import itemStyles from './Item.module.css';
@@ -12,7 +12,7 @@ const Item = ({ value, isDone }) => (<span className={
 }>
   <div className={itemStyles.item}>
     {value}
-    <ButtonClearFocusedTodo />
+    <button className={itemStyles.button}><DeleteForeverIcon className={itemStyles.icon}></DeleteForeverIcon></button>
   </div>
 </span>);
 

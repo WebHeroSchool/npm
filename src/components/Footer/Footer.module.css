@@ -11,3 +11,43 @@
   height: 40px;
   margin-right: 30px;
 }
+
+.button-show-all {
+  margin-right: 10px;
+  padding: 0;
+  height: 40px;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button-show-active {
+  margin-right: 10px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button-show-completed {
+  margin-right: 30px;
+  padding: 0;
+  height: 40px;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button-clear-completed {
+  background: none;
+  padding: 0;
+  height: 40px;
+  border: none;
+  font: inherit;
+  outline: inherit;
+  cursor: pointer;
+}
