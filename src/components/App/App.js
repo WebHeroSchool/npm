@@ -10,16 +10,16 @@ class App extends React.Component {
       {
         value: 'Изучить React',
         isDone: false
-       },
+      },
       {
         value: 'Подготовиться к собеседованию',
         isDone: false
-       },
-       {
+      },
+      {
         value: 'Найти работу!',
         isDone: false
-       },
-       {
+      },
+      {
         value: 'Тест',
         isDone: true
       },
