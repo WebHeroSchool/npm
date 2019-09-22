@@ -12,7 +12,7 @@ const ItemList = ({ items, onClickDone }) => (
         [styles['icon-of-unfinished']]: !item.isDone,
       })
     }>
-      <Item value={item.value} isDone={item.isDone}  onClickDone={onClickDone} /></li>)}
+      <Item value={item.value} isDone={item.isDone} onClickDone={onClickDone} /></li>)}
   </ul>);
 
 export default ItemList;
