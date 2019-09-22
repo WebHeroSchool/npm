@@ -4,14 +4,14 @@ import classnames from 'classnames';
 import styles from '../App/App.module.css';
 import itemStyles from './Item.module.css';
 
-const Item = ({ value, isDone }) => (<span className={
+const Item = ({ value, isDone, onClickDone }) => (<span className={
   classnames({
     [styles.item]: true,
     [styles.done]: isDone,
   })
 }>
   <div className={itemStyles.item}>
-    {value}
+    <span onClick={() => onClickDone(isDone)}>{value}</span>
     <button className={itemStyles.button}><DeleteForeverIcon className={itemStyles.icon}></DeleteForeverIcon></button>
   </div>
 </span>);
