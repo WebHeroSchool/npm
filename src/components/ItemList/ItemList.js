@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import styles from '../App/App.module.css';
 import itemListStyles from './ItemList.module.css';
 
-const ItemList = ({ items }) => (
+const ItemList = ({ items, onClickDone }) => (
   <ul className={itemListStyles.list}>
     {items.map(item => <li key={item.value} className={
       classnames({
@@ -12,7 +12,7 @@ const ItemList = ({ items }) => (
         [styles['icon-of-unfinished']]: !item.isDone,
       })
     }>
-      <Item value={item.value} isDone={item.isDone} /></li>)}
+      <Item value={item.value} isDone={item.isDone} onClickDone={onClickDone} /></li>)}
   </ul>);
 
 export default ItemList;

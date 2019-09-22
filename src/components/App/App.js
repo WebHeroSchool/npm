@@ -26,15 +26,17 @@ class App extends React.Component {
     ]
   };
 
+  onClickDone = isDone => console.log(isDone);
+
   render() {
-    const counctUnfulfilled = this.state.items.filter(item => item.isDone == false);
+    const countUnfulfilled = this.state.items.filter(item => item.isDone === false);
   
     return (
     <div className={styles.wrap}>
       <h1 className={styles.title}>todos</h1>
       <InputItem />
-      <ItemList items={this.state.items} />
-      <Footer count={counctUnfulfilled.length} />
+      <ItemList items={this.state.items} onClickDone={this.onClickDone} />
+      <Footer count={countUnfulfilled.length} />
     </div>)
   }
 }
