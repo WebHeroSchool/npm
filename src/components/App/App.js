@@ -7,24 +7,24 @@ import styles from './App.module.css';
 class App extends React.Component {
   state = {
     items: [
-    {
-       value: 'Изучить React',
-       isDone: false
-     },
-    {
-       value: 'Подготовиться к собеседованию',
-       isDone: false
-     },
-     {
-       value: 'Найти работу!',
-       isDone: false
-     },
-     {
-      value: 'Тест',
-      isDone: true
-    },
-  ]
-}
+      {
+         value: 'Изучить React',
+         isDone: false
+       },
+      {
+         value: 'Подготовиться к собеседованию',
+         isDone: false
+       },
+       {
+         value: 'Найти работу!',
+         isDone: false
+       },
+       {
+        value: 'Тест',
+        isDone: true
+      },
+    ]
+  };
 
   render() {
     const counctUnfulfilled = this.state.items.filter(item => item.isDone == false);
