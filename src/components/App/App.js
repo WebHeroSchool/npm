@@ -5,8 +5,8 @@ import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
 class App extends React.Component {
-  render() {
-    const items = [
+  state = {
+    items: [
       {
         value: 'Изучить React',
         isDone: false
@@ -23,14 +23,17 @@ class App extends React.Component {
         value: 'Тест',
         isDone: true
       },
-    ];
-    const counctUnfulfilled = items.filter(item => item.isDone == false);
+    ]
+  };
+
+  render() {
+    const counctUnfulfilled = this.state.items.filter(item => item.isDone == false);
   
     return (
     <div className={styles.wrap}>
       <h1 className={styles.title}>todos</h1>
       <InputItem />
-      <ItemList items={items} />
+      <ItemList items={this.state.items} />
       <Footer count={counctUnfulfilled.length} />
     </div>)
   }
