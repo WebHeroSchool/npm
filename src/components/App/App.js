@@ -8,25 +8,41 @@ class App extends React.Component {
   state = {
     items: [
       {
+        id: 1,
         value: 'Изучить React',
         isDone: false
       },
       {
+        id: 2,
         value: 'Подготовиться к собеседованию',
         isDone: false
       },
       {
+        id: 3,
         value: 'Найти работу!',
         isDone: false
       },
       {
+        id: 4,
         value: 'Тест',
         isDone: true
       },
     ]
   };
 
-  onClickDone = isDone => console.log(isDone);
+  onClickDone = id => {
+    const newItemList = this.state.items.map(item => {
+      const newItem = item;
+      if (item.id === id) {
+        newItem.isDone = !item.isDone;
+      }
+
+      return newItem;
+    })
+
+    this.setState({ items: newItemList });
+  };  
+
 
   render() {
     const countUnfulfilled = this.state.items.filter(item => item.isDone === false);
