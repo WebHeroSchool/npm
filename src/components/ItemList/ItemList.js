@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import styles from '../App/App.module.css';
 import itemListStyles from './ItemList.module.css';
 
-const ItemList = ({ items, onClickDone }) => (
+const ItemList = ({ items, onClickDone, onClickDeleteItem }) => (
   <ul className={itemListStyles.list}>
     {items.map(item => 
     <li key={item.value} className={
@@ -17,7 +17,8 @@ const ItemList = ({ items, onClickDone }) => (
         value={item.value} 
         isDone={item.isDone} 
         id={item.id} 
-        onClickDone={onClickDone} 
+        onClickDone={onClickDone}
+        onClickDeleteItem={onClickDeleteItem} 
       />
     </li>)}
   </ul>);
