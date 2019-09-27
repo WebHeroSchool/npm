@@ -37,7 +37,7 @@ class App extends React.Component {
         item.isDone = !item.isDone;
       }
 
-      return item;  
+      return item;
     })
 
     this.setState({ items: newItemList });
