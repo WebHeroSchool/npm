@@ -7,7 +7,7 @@ import itemListStyles from './ItemList.module.css';
 const ItemList = ({ items, onClickDone, onClickDeleteItem }) => (
   <ul className={itemListStyles.list}>
     {items.map(item => 
-    <li key={item.value} className={
+    <li key={item.id} className={
       classnames({
         [styles['icon-of-done']]: item.isDone,
         [styles['icon-of-unfinished']]: !item.isDone,

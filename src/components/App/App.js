@@ -3,7 +3,6 @@ import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
-import { importDeclaration } from '@babel/types';
 
 class App extends React.Component {
   state = {
@@ -28,7 +27,8 @@ class App extends React.Component {
         value: 'Тест',
         isDone: true
       },
-    ]
+    ],
+    count: 4
   };
 
   onClickDone = id => {
@@ -37,7 +37,7 @@ class App extends React.Component {
         item.isDone = !item.isDone;
       }
 
-      return item;
+      return item;  
     })
 
     this.setState({ items: newItemList });
@@ -51,13 +51,25 @@ class App extends React.Component {
     this.setState({ items: newItemList });
   };
 
+  onClickAddItem = value => this.setState(state => ({
+    items: [
+      ...state.items,
+      {
+        id: state.count + 1,
+        value,
+        isDone: false 
+      }
+    ],
+    count: state.count + 1
+  }));
+
   render() {
     const countUnfulfilled = this.state.items.filter(item => item.isDone === false);
-  
+    
     return (
     <div className={styles.wrap}>
       <h1 className={styles.title}>todos</h1>
-      <InputItem />
+      <InputItem onClickAddItem={this.onClickAddItem} />
       <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDeleteItem={this.onClickDeleteItem} />
       <Footer count={countUnfulfilled.length} />
     </div>)
