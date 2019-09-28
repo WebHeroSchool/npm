@@ -23,7 +23,7 @@ Item.defaultProps = {
 };
 
 Item.propTypes = {
-  isDone: PropTypes.boolean.isRequired
+  isDone: PropTypes.bool.isRequired
 };
 
 export default Item;
