@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import classnames from 'classnames';
 import styles from '../App/App.module.css';
@@ -19,6 +20,10 @@ const Item = ({ value, isDone, onClickDone, id, onClickDeleteItem }) => (<span c
 Item.defaultProps = {
   value: "Дело было потеряно!",
   isDone: true
+};
+
+Item.propTypes = {
+  isDone: PropTypes.boolean.isRequired
 };
 
 export default Item;
