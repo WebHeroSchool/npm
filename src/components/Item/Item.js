@@ -16,4 +16,9 @@ const Item = ({ value, isDone, onClickDone, id, onClickDeleteItem }) => (<span c
   </div>
 </span>);
 
+Item.defaultProps = {
+  value: "Дело было потеряно!",
+  isDone: true
+};
+
 export default Item;
