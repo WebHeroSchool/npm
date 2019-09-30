@@ -10,7 +10,7 @@ class InputItem extends React.Component {
   };
 
   onButtonClick = () => {
-    if (this.state.inputValue === false) {
+    if (this.state.inputValue == false) {
       this.setState({
         isError: true
       })
@@ -26,7 +26,7 @@ class InputItem extends React.Component {
 
   render() {
     let textField;
-    if (this.state.isError === false) {
+    if (this.state.isError == false) {
       textField = <TextField
         id='standard-dense'
         className={inputItemStyles.input}
@@ -54,7 +54,6 @@ class InputItem extends React.Component {
           variant="contained"
           className={inputItemStyles.button}
           onClick={this.onButtonClick}
-          color='#3f51b5'
         >
           Add
         </Button>
