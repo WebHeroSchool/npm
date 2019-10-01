@@ -10,7 +10,8 @@ class InputItem extends React.Component {
   };
 
   onButtonClick = () => {
-    if (this.state.inputValue == false) {
+    this.state.inputValue = this.state.inputValue.replace(/ +/g, ' ').trim();
+    if (this.state.inputValue === '') {
       this.setState({
         isError: true
       })
