@@ -26,7 +26,7 @@ class InputItem extends React.Component {
 
   render() {
     let textField;
-    if (this.state.isError == false) {
+    if (this.state.isError === false) {
       textField = <TextField
         id='standard-dense'
         className={inputItemStyles.input}
