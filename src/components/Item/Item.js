@@ -7,15 +7,11 @@ import itemStyles from './Item.module.css';
 
 class Item extends React.Component {
   componentDidMount() {
-    console.log('componentDidMount');
-  }
-
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
+    this.timerID = setInterval(() => console.log('Утечка памяти!'), 1000);
   }
 
   componentWillUnmount() {
-    console.log('componentWillUnmount');
+    clearInterval(this.timerID);
   }
 
   render() {
