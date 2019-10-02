@@ -10,7 +10,7 @@ class InputItem extends React.Component {
   };
 
   onButtonClick = () => {
-    if (this.state.inputValue === false) {
+    if (this.state.inputValue === '') {
       this.setState({
         isError: true
       })
@@ -54,7 +54,6 @@ class InputItem extends React.Component {
           variant="contained"
           className={inputItemStyles.button}
           onClick={this.onButtonClick}
-          color='#3f51b5'
         >
           Add
         </Button>
