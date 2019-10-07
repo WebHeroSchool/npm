@@ -1,0 +1,33 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  min-height: 335px;
+  width: 450px;
+  font-family: 'Comic Sans MS';
+  border: 4px solid #cfcfcf;
+  box-shadow: 0 0 14px 0 rgba(86, 89, 92, 0.767);
+}
+
+.title {
+  font-size: 60px;
+  color: #696969;
+}
+
+.done {
+  color: #c4c4c4;
+}
+
+.icon-of-unfinished {
+  list-style-type: none;
+  background: url(./image/isntDone.PNG) no-repeat 0 12px;
+  padding-left: 30px;
+}
+
+.icon-of-done {
+  list-style-type: none;
+  background: url(./image/isDone.PNG) no-repeat 0 12px;
+  padding-left: 30px;
+}

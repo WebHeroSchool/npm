@@ -2,18 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import classnames from 'classnames';
-import styles from '../App/App.module.css';
+import styles from '../Todo/Todo.module.css';
 import itemStyles from './Item.module.css';
 
 class Item extends React.Component {
-  componentDidMount() {
-    this.timerID = setInterval(() => console.log('Утечка памяти!'), 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
-
   render() {
     const { value, isDone, onClickDone, id, onClickDeleteItem } = this.props;
 
