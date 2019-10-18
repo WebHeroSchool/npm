@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Item from '../Item/Item';
 import classnames from 'classnames';
-import styles from '../App/App.module.css';
+import styles from '../Todo/Todo.module.css';
 import itemListStyles from './ItemList.module.css';
 
 const ItemList = ({ items, onClickDone, onClickDeleteItem }) => (
