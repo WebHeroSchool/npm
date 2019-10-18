@@ -72,7 +72,7 @@ class Todo extends React.Component {
         <InputItem onClickAddItem={this.onClickAddItem} />
         <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDeleteItem={this.onClickDeleteItem} />
         <Footer count={countUnfulfilled.length} />
-      </div>);
+      </div>)
   }
 }
 
