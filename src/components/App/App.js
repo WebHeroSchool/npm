@@ -1,30 +1,48 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import Todo from '../Todo/Todo';
 import AboutMe from '../AboutMe/AboutMe';
-import Contacts from '../Contacts/Contacts';
-import Card from '@material-ui/core/Card';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
 import styles from './App.module.css';
 
-const App = () =>
-  (<Router>
-    <div className={styles.wrap}>
-      <Card className={styles.sidebar}>
-        <MenuList>
-          <Link className={styles.link} to='/'><MenuItem>About me</MenuItem></Link>
-          <Link className={styles.link} to='/todo'><MenuItem>Todos</MenuItem></Link>
-          <Link className={styles.link} to='/contacts'><MenuItem>Contacts</MenuItem></Link>
-        </MenuList>
-      </Card> 
-
-      <Card>
+const App = () => (
+  <div className={styles.app}>
+    <Router>
+      <header className={styles.header}>
+        <nav>
+          <NavLink
+            to='/'
+            exact
+            className={styles.link}
+            activeStyle={{
+              color: '#FFF',
+              background: '#356EFF',
+              boxShadow: '0px 0px 3px rgba(0, 0, 0, 0.25)',
+              borderRadius: '37px',
+            }}
+          >
+            Обо мне
+          </NavLink>
+          <NavLink
+            to='/todo'
+            className={styles.link} 
+            activeStyle={{
+              color: '#FFF',
+              background: '#356EFF',
+              boxShadow: '0px 0px 3px rgba(0, 0, 0, 0.25)',
+              borderRadius: '37px',
+            }}
+          >
+            Дела
+          </NavLink>
+        </nav>
+      </header>
+  
+      <main>
         <Route path='/' exact component={AboutMe} />
         <Route path='/todo' component={Todo} />
-        <Route path='/contacts' component={Contacts} />
-      </Card>
-    </div>
-  </Router>);
+      </main>
+    </Router>
+  </div>
+);
 
 export default App;

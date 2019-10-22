@@ -1,84 +1,143 @@
 import React from 'react';
 import styles from './AboutMe.module.css';
 import Octokit from '@octokit/rest';
+import Card from '@material-ui/core/Card';
 
 const  octokit = new  Octokit();
 
 class AboutMe extends React.Component {
   state = {
-    isLoading: true,
-    isError: false,
-    ErrorText: '',
+    isLoadingUser: true,
+    isLoadingRepositories: true,
+    isErrorUser: false,
+    isErrorRepositories: false,
+    ErrorTextUser: '',
     User: [],
     repoList: [],
-  };
+  }
 
   componentDidMount() {
-    octokit.repos.listForUser({
-      username: 'lunar616',
-    }).then(({ data }) => {
-      this.setState({
-        repoList: data,
-      })
-    })
-    .catch(() => {
-      this.setState({ 
-        isLoading: false,
-        isError: true,
-        ErrorText: 'Не удалось вывести информацию о пользователе, попробуйте позже!'
-      });
-    });
-
     octokit.users.getByUsername({
       username: 'lunar616'
     })
     .then(({data}) => {
       this.setState({ 
         User: data,
-        isLoading: false,
+        isLoadingUser: false,
       });
     })
-    .catch(err => {
+    .catch(() => {
       this.setState({ 
-        isLoading: false,
-        isError: true,
+        isLoadingUser: false,
+        isErrorUser: true,
         ErrorText: 'Не удалось вывести информацию о пользователе, попробуйте позже!'
       });
     });
+
+    octokit.repos.listForUser({
+      username: 'AldeOwl',
+    }).then(({ data }) => {
+      this.setState({
+        repoList: data,
+        isLoadingRepositories: false,
+      })
+    })
+    .catch(() => {
+      this.setState({ 
+        isLoadingRepositories: false,
+        isErrorRepositories: true,
+      });
+    });
   };
-
+  
   render() {
-    const { isLoading, repoList, isError, ErrorText, User } = this.state;
-
+    const { isLoadingUser, isLoadingRepositories, repoList, isErrorUser, isErrorRepositories, ErrorTextUser, User } = this.state;
+  
     return (
-      <div className={styles.page}>
-        { isLoading ? <div className={styles.preloader}></div> :
-          <div>
-            { isError ? <div className={styles.error}>{ErrorText}</div> :
-              <div className={styles.wrap}>
-                <div className={styles.user}>
-                  <img className={styles.avatar} src={User.avatar_url}></img>
+      <section className={styles.section}>
+        <Card className={styles.user}>
+          { isLoadingUser ? <div className={styles.preloader}></div> :
+              <div className={styles.user__wrapp}>
+                { isErrorUser ? <div>{ErrorTextUser}</div> :
                   <div className={styles.info}>
-                    <p>{User.login}</p>
-                    <p>{User.bio}</p>
+                    <img className={styles.info__avatar} src={User.avatar_url}></img>
+                    <div className={styles.description}>
+                      <a className={styles.description__login} href={User.login}>Никита Родионов</a>
+                      <p className={styles.description__bio}>{User.bio}</p>
+                      <a className={styles.description__mail} 
+                        href='mailto: nikita.rodionov.dev@yandex.ru'>
+                        <ion-icon name="mail" />
+                        nikita.rodionov.dev@yandex.ru
+                      </a>
+                      <a className={styles.description__tg} 
+                        href='tg://resolve?domain=lunar616'>
+                        <ion-icon name="send" />
+                        +7 (999) 850 24 52
+                      </a>
+                    </div>
+                    <div className={styles.contacts}>
+                      <a href="https://github.com/lunar616"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ion-icon name="logo-github"></ion-icon>
+                      </a>
+                      <a href="https://vk.com/lunar616"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ion-icon name="logo-vk"></ion-icon>
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/lunar616"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <h2 className={styles.subtitle}>My repositories:</h2>
-                <div className={styles.repo}>
-                  <ol>
+                }
+              </div>
+          }
+        </Card>
+
+        <Card className={styles.works}>
+          { isLoadingRepositories ? <div className={styles.preloader}></div> :
+            <div className={styles.works__wrapp}>
+              <h1 className={styles.works__title}>Репозитории на github.com</h1>
+              { isErrorRepositories ? 
+                <div className={styles.error}>
+                  <p className={styles.error__text}>Что-то пошло не так...</p>
+                  <p className={styles.error__help}>Попробуйте загрузить ещё раз</p>
+                </div> :
+                <div className={styles.repositories}>
+                  <ol className={styles.list}>
                     {repoList.map(repo => (
-                      <li key={repo.id}>
-                        <a href={repo.svn_url} className={styles.link}>{repo.name}</a>
-                      </li>
+                      <ul key={repo.id}>
+                        <div className={styles.repository}>
+                          <div className={styles['info-about-repository-wrapped']}>
+                            <a href={repo.svn_url} className={styles['info-about-repository-wrapped__link']}>{repo.name}</a>
+                            <div className={styles['info-about-repository']}>
+                              <div className={styles[`info-about-repository__${repo.language}-icon`.toLowerCase()]}></div>
+                              <p className={styles['info-about-repository__language']}>{repo.language}</p>
+                              <p className={styles['info-about-repository__star']}>{repo.stargazers_count}</p>
+                              <p className={styles['info-about-repository__forks']}>{repo.forks}</p>
+                              <p className={styles['info-about-repository__update']}>{repo.updated_at}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </ul>
                     ))}
                   </ol>
                 </div>
-              </div>
-            }
-          </div>
-        }
-      </div>
+              }
+            </div>
+          }
+        </Card>
+      </section>
     );
   };
 };
+
 export default AboutMe;

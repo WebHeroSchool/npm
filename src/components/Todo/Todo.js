@@ -28,7 +28,7 @@ class Todo extends React.Component {
         isDone: true
       },
     ],
-    count: 4
+    count: 4,
   };
   
   onClickDone = id => {
