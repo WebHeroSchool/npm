@@ -1,8 +1,9 @@
 import React from 'react';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
+import TodosMenu from '../TodosMenu/TodosMenu';
 import styles from './Todo.module.css';
+import Card from '@material-ui/core/Card';
 
 class Todo extends React.Component {
   state = {
@@ -64,15 +65,19 @@ class Todo extends React.Component {
   }));
   
   render() {
-    const countUnfulfilled = this.state.items.filter(item => item.isDone === false);
+    const numberOfCompleted = this.state.items.filter(item => item.isDone === true);
+    const numberOfUncompleted = this.state.items.filter(item => item.isDone === false);
       
     return (
-      <div className={styles.wrap}>
-        <h1 className={styles.title}>todos</h1>
-        <InputItem onClickAddItem={this.onClickAddItem} />
-        <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDeleteItem={this.onClickDeleteItem} />
-        <Footer count={countUnfulfilled.length} />
-      </div>);
+      <section className={styles.section}>
+        <Card className={styles.todos}>
+          <div className={styles.head}>
+            <h1 className={styles.head__title}>Список моих дел</h1>
+            <TodosMenu numberOfCompleted={numberOfCompleted.length} numberOfUncompleted={numberOfUncompleted.length} />
+          </div>
+          <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDeleteItem={this.onClickDeleteItem} />
+        </Card>
+      </section>);
   };
 };
 

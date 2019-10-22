@@ -1,17 +1,26 @@
-.wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+.section {
   margin: auto;
-  min-height: 335px;
-  width: 450px;
-  font-family: 'Comic Sans MS';
+  height: 644px;
+  align-items: center;
 }
 
-.title {
-  font-size: 60px;
-  color: #696969;
+.todos {
+  height: 100%;
+  width: 100%;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 auto 41px auto;
+  height: 60px;
+  width: 636px;
+}
+
+.head__title {
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .done {

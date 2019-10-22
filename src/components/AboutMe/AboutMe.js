@@ -30,7 +30,7 @@ class AboutMe extends React.Component {
       this.setState({ 
         isLoadingUser: false,
         isErrorUser: true,
-        ErrorText: 'Не удалось вывести информацию о пользователе, попробуйте позже!'
+        ErrorTextUser: 'Не удалось вывести информацию о пользователе, попробуйте позже!'
       });
     });
 
@@ -58,7 +58,7 @@ class AboutMe extends React.Component {
         <Card className={styles.user}>
           { isLoadingUser ? <div className={styles.preloader}></div> :
               <div className={styles.user__wrapp}>
-                { isErrorUser ? <div>{ErrorTextUser}</div> :
+                { isErrorUser ? <div className={styles['user-error']}>{ErrorTextUser}</div> :
                   <div className={styles.info}>
                     <img className={styles.info__avatar} src={User.avatar_url}></img>
                     <div className={styles.description}>

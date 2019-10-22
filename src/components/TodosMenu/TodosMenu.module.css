@@ -1,0 +1,27 @@
+.menu {
+  display: flex;
+  align-items: flex-end;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.menu__is-done,
+.menu__isnt-done,
+.menu__all {
+  padding: 4px;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.menu__is-done,
+.menu__isnt-done {
+  margin-right: 12px;
+}
+
+.menu__is-done_span,
+.menu__isnt-done_span {
+  color:#356EFF;
+}
