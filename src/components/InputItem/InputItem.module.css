@@ -4,33 +4,47 @@
   align-items: center;
 }
 
-.input {
+.wrap__input {
   display: flex;
   align-items: center;
   margin-right: 8px;
-  padding: 9.5px 13px 9.5px 13px;
+  padding: 9.5px 13px;
   width: 566px;
   border: 1px solid #CCCCCC;
   border-radius: 29px;
   outline: none;
 }
 
-.input_error {
-  display: flex;
-  align-items: center;
-  margin-right: 8px;
-  padding: 9.5px 13px 9.5px 13px;
-  width: 566px;
-  border: 1px solid #FF0000;
-  border-radius: 29px;
-  outline: none;
+.wrap__error-empty-text {
+  position: relative;
 }
 
-.input:focus {
+.wrap__error-empty-text::before {
+  content: 'Для добавления дела необходимо ввести текст!';
+  position: absolute;
+  padding: 10px;
+  width: 170px;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: #356EFF;
+  border-radius: 6px;
+  transform: translateY(-130%);
+}
+
+.wrap__error-empty-text::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  border: 10px solid transparent;
+  border-top-color: #356EFF;
+  transform: translateY(-260%);
+}
+
+.wrap__input:focus {
   border: 1px solid #356EFF;
 }
 
-.button {
+.wrap__button {
   height: 36px;
   width: 36px;
   background: url(./add.png) center center no-repeat;

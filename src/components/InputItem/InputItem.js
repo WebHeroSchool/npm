@@ -1,16 +1,17 @@
 import React from 'react';
-import inputItemStyles from './InputItem.module.css';
+import styles from './InputItem.module.css';
+import classnames from 'classnames';
 
 class InputItem extends React.Component {
   state = {
     inputValue: '',
-    isError: false
+    isError: false,
   };
 
   onButtonClick = () => {
     if (this.state.inputValue === '') {
       this.setState({
-        isError: true
+        isError: true,
       })
     } else {
       this.setState({
@@ -19,36 +20,25 @@ class InputItem extends React.Component {
       })
   
       this.props.onClickAddItem(this.state.inputValue);
-    }
+    };
   };
 
   render() {
-    let textField;
-    if (this.state.isError === false) {
-      textField = <input
-        placeholder='Введите текст'
-        className={inputItemStyles.input}
-        value={this.state.inputValue}
-        onChange={event => this.setState({ inputValue: event.target.value })}
-      ></input>
-    } else {
-      textField = <input
-        placeholder='Для добавления дела нужно ввести текст!'
-        className={inputItemStyles.input_error}
-        value={this.state.inputValue}
-        onChange={event => this.setState({ inputValue: event.target.value })}
-      ></input>
-    };
-
     return (
-      <div className={inputItemStyles.wrap}>
-        { textField }
-        <button
-          className={inputItemStyles.button}
-          onClick={this.onButtonClick}
-        >
-        </button>
-      </div>)
+      <div className={styles.wrap}>
+        <div className={classnames({
+          [styles['wrap__error-empty-text']]: this.state.isError,
+        })}>
+          <input
+            placeholder={'Введите текст'}
+            className={styles.wrap__input}
+            value={this.state.inputValue}
+            onChange={event => this.setState({ inputValue: event.target.value })}>
+          </input>
+        </div>
+        <button className={styles.wrap__button} onClick={this.onButtonClick}></button>
+      </div>
+    );
   }
 };
 
