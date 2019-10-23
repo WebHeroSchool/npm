@@ -15,7 +15,8 @@
   outline: none;
 }
 
-.wrap__error-empty-text {
+.wrap__error-empty-text,
+.wrap__error-repeat-case {
   position: relative;
 }
 
@@ -32,6 +33,27 @@
 }
 
 .wrap__error-empty-text::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  border: 10px solid transparent;
+  border-top-color: #356EFF;
+  transform: translateY(-260%);
+}
+
+.wrap__error-repeat-case::before {
+  content: 'Это дело уже есть в списке!';
+  position: absolute;
+  padding: 10px;
+  width: 170px;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: #356EFF;
+  border-radius: 6px;
+  transform: translateY(-130%);
+}
+
+.wrap__error-repeat-case::after {
   content: '';
   position: absolute;
   left: 10px;

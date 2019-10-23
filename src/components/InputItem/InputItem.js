@@ -20,20 +20,26 @@ class InputItem extends React.Component {
       })
   
       this.props.onClickAddItem(this.state.inputValue);
-    };
+    }
   };
 
   render() {
+    const { classNameForInputWrapp } = this.props;
     return (
       <div className={styles.wrap}>
-        <div className={classnames({
+        <div id='testt' className={classnames({
           [styles['wrap__error-empty-text']]: this.state.isError,
+          [styles['wrap__error-repeat-case']]: classNameForInputWrapp,
         })}>
           <input
             placeholder={'Введите текст'}
             className={styles.wrap__input}
             value={this.state.inputValue}
-            onChange={event => this.setState({ inputValue: event.target.value })}>
+            onChange={event =>
+              this.setState({
+                inputValue: event.target.value 
+              })
+            }>
           </input>
         </div>
         <button className={styles.wrap__button} onClick={this.onButtonClick}></button>

@@ -8,7 +8,7 @@
 .menu__is-done,
 .menu__isnt-done,
 .menu__all {
-  padding: 4px;
+  padding: 4px 6px;
   background: none;
   border: none;
   font: inherit;
@@ -24,4 +24,17 @@
 .menu__is-done_span,
 .menu__isnt-done_span {
   color:#356EFF;
+}
+
+.menu__is-done:focus,
+.menu__isnt-done:focus,
+.menu__all:focus {
+  color: #FFFFFF;
+  background: #356EFF;
+  border-radius: 23px;
+}
+
+.menu__is-done:focus .menu__is-done_span,
+.menu__isnt-done:focus .menu__isnt-done_span {
+  color: #FFFFFF;
 }

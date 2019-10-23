@@ -30,6 +30,7 @@ class Todo extends React.Component {
       },
     ],
     count: 4,
+    errorRepeatCaseinInput: false,
   };
   
   onClickDone = id => {
@@ -52,17 +53,25 @@ class Todo extends React.Component {
     this.setState({ items: newItemList });
   };
   
-  onClickAddItem = value => this.setState(state => ({
-    items: [
-      ...state.items,
-      {
-        id: state.count + 1,
-        value,
-        isDone: false 
-      }
-    ],
-    count: state.count + 1
-  }));
+  onClickAddItem = value => {
+    const perebor = this.state.items.filter(item => item.value == value)
+    if (perebor.length === 0) {
+      this.setState(state => ({
+        items: [
+          ...state.items,
+          {
+            id: state.count + 1,
+            value,
+            isDone: false 
+          }
+        ],
+        count: state.count + 1,
+        classNameForInputWrapp: false,
+      }));
+    } else {
+      this.setState({ classNameForInputWrapp: true })
+    }
+  };
   
   render() {
     const numberOfCompleted = this.state.items.filter(item => item.isDone === true);
@@ -76,7 +85,7 @@ class Todo extends React.Component {
             <TodosMenu numberOfCompleted={numberOfCompleted.length} numberOfUncompleted={numberOfUncompleted.length} />
           </div>
           <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDeleteItem={this.onClickDeleteItem} />
-          <InputItem onClickAddItem={this.onClickAddItem} />
+          <InputItem items={this.state.items} classNameForInputWrapp={this.state.classNameForInputWrapp} onClickAddItem={this.onClickAddItem} />
         </Card>
       </section>);
   };
