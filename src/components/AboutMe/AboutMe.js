@@ -112,7 +112,7 @@ class AboutMe extends React.Component {
                   <p className={styles.error__help}>Попробуйте загрузить ещё раз</p>
                 </div> :
                 <div className={styles.repositories}>
-                  <ol className={styles.list}>
+                  <div className={styles.list}>
                     {repoList.map(repo => (
                       <ul key={repo.id}>
                         <div className={styles.repository}>
@@ -129,7 +129,7 @@ class AboutMe extends React.Component {
                         </div>
                       </ul>
                     ))}
-                  </ol>
+                  </div>
                 </div>
               }
             </div>

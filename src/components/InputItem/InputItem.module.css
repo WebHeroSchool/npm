@@ -1,13 +1,40 @@
 .wrap {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .input {
-  width: 300px;
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  padding: 9.5px 13px 9.5px 13px;
+  width: 566px;
+  border: 1px solid #CCCCCC;
+  border-radius: 29px;
+  outline: none;
+}
+
+.input_error {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  padding: 9.5px 13px 9.5px 13px;
+  width: 566px;
+  border: 1px solid #FF0000;
+  border-radius: 29px;
+  outline: none;
+}
+
+.input:focus {
+  border: 1px solid #356EFF;
 }
 
 .button {
-  width: 350px;
+  height: 36px;
+  width: 36px;
+  background: url(./add.png) center center no-repeat;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }

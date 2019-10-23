@@ -76,6 +76,7 @@ class Todo extends React.Component {
             <TodosMenu numberOfCompleted={numberOfCompleted.length} numberOfUncompleted={numberOfUncompleted.length} />
           </div>
           <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDeleteItem={this.onClickDeleteItem} />
+          <InputItem onClickAddItem={this.onClickAddItem} />
         </Card>
       </section>);
   };

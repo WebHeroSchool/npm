@@ -1,27 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import classnames from 'classnames';
-import styles from '../Todo/Todo.module.css';
-import itemStyles from './Item.module.css';
+import styles from './Item.module.css';
 
-class Item extends React.Component {
-  render() {
-    const { value, isDone, onClickDone, id, onClickDeleteItem } = this.props;
-
-    return(<span className={
-      classnames({
-        [styles.item]: true,
-        [styles.done]: isDone,
-      })
-    }>
-      <div className={itemStyles.item}>
-        <span className={itemStyles.text} onClick={() => onClickDone(id)}>{value}</span>
-        <button className={itemStyles.button} onClick={() => onClickDeleteItem(id)}><DeleteForeverIcon className={itemStyles.icon}></DeleteForeverIcon></button>
-      </div>
-    </span>)
-  }
-}
+const Item = ({ value, isDone, onClickDone, id, onClickDeleteItem}) => {
+  return (
+    <div className={styles.wrapp}>
+      <input
+        type='checkbox'
+        className={styles.checkbox}
+        id={id}
+        defaultChecked={isDone}
+      />
+      <label
+        htmlFor={id}
+        className={styles.value}
+        onClick={() => onClickDone(id)}
+      >
+        {value}
+      </label>
+      <button
+        className={styles['button_delete']}
+        onClick={() => onClickDeleteItem(id)}
+      />
+    </div>
+  );
+};
 
 Item.defaultProps = {
   value: "Дело было потеряно!",

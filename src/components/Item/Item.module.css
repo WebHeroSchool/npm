@@ -1,23 +1,57 @@
-.item {
+.wrapp {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  justify-content: space-between;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  height: 36px;
+  border: 1px solid #CCCCCC;
+  border-radius: 41px;
 }
 
-.text {
-  cursor: pointer;
+.wrapp:hover {
+  border: 1px solid #356EFF;
 }
 
-.button {
-  height: 40px;
-  padding: 0;
+.checkbox {
+  display: none;
+}
+
+.value {
+  position: relative;
+  padding-left: 40px;
+  height: 17px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.checkbox:checked + .value {
+  color: #CCCCCC;
+  text-decoration: line-through;
+}
+
+.checkbox + .value::before {
+  position: absolute;
+  left: 13px;
+  top: 1px;
+  content: '';
+  width: 17px;
+  height: 16px;
+  background: url(./checkbox.png) center center no-repeat;
+}
+
+.checkbox:checked + .value:before {
+  background: url(./checkbox-checked.png) center center no-repeat;
+}
+
+.button_delete {
+  width: 25px;
+  height: 16px;
   border: none;
-  font: inherit;
-  background: none;
-  cursor: pointer;
+  background: url(./delete.png) left center no-repeat;
 }
 
-.icon {
-  color: black;
+.value:hover,
+.button_delete:hover {
+  cursor: pointer;
 }

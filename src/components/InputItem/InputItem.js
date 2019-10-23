@@ -1,7 +1,5 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
 import inputItemStyles from './InputItem.module.css';
-import Button from '@material-ui/core/Button';
 
 class InputItem extends React.Component {
   state = {
@@ -27,36 +25,29 @@ class InputItem extends React.Component {
   render() {
     let textField;
     if (this.state.isError === false) {
-      textField = <TextField
-        id='standard-dense'
+      textField = <input
+        placeholder='Введите текст'
         className={inputItemStyles.input}
-        label='What needs to be done?'
-        margin='dense'
         value={this.state.inputValue}
         onChange={event => this.setState({ inputValue: event.target.value })}
-      />
+      ></input>
     } else {
-      textField = <TextField
-        error
-        id='standard-dense'
-        className={inputItemStyles.input}
-        label='For add a case you need to enter text!'
-        margin='dense'
+      textField = <input
+        placeholder='Для добавления дела нужно ввести текст!'
+        className={inputItemStyles.input_error}
         value={this.state.inputValue}
         onChange={event => this.setState({ inputValue: event.target.value })}
-      /> 
+      ></input>
     };
 
     return (
       <div className={inputItemStyles.wrap}>
         { textField }
-        <Button
-          variant="contained"
+        <button
           className={inputItemStyles.button}
           onClick={this.onButtonClick}
         >
-          Add
-        </Button>
+        </button>
       </div>)
   }
 };
