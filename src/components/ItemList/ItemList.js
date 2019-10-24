@@ -4,7 +4,7 @@ import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 
 const ItemList = ({ items, onClickDone, onClickDeleteItem }) => {
-  if (items.length >= 1) {
+  if (items.length > 0) {
     return (
       <ul className={styles.list}>
         {items.map(item => (
