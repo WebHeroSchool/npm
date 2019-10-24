@@ -32,7 +32,7 @@ class Todo extends React.Component {
     selectedMenuItem: 'all',
     errorRepeatCaseinInput: false,
   };
-  
+
   onClickDone = id => {
     const newItemList = this.state.items.map(item => {
       if (item.id === id) {
@@ -62,6 +62,12 @@ class Todo extends React.Component {
       }));
     } else {
       this.setState({ classNameForInputWrapp: true })
+
+      setTimeout(() => {
+        this.setState({
+          classNameForInputWrapp: false
+        })
+      }, 2000)
     }
   };
   
@@ -70,14 +76,6 @@ class Todo extends React.Component {
       return item.id !== id;
     })
   
-    this.setState({ items: newItemList });
-  };
-
-  onClickCompletedItems = () => {
-    const newItemList = this.state.items.filter(item => {
-      return item.isDone === true;
-    })
-
     this.setState({ items: newItemList });
   };
 

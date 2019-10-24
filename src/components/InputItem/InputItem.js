@@ -13,6 +13,12 @@ class InputItem extends React.Component {
       this.setState({
         isError: true,
       })
+
+      setTimeout(() => {
+        this.setState({
+          isError: false
+        })
+      }, 2000)
     } else {
       this.setState({
         inputValue: '',
