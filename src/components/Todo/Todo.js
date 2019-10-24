@@ -1,7 +1,6 @@
 import React from 'react';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
-import TodosMenu from '../TodosMenu/TodosMenu';
 import styles from './Todo.module.css';
 import Card from '@material-ui/core/Card';
 
@@ -30,6 +29,7 @@ class Todo extends React.Component {
       },
     ],
     count: 4,
+    selectedMenuItem: 'all',
     errorRepeatCaseinInput: false,
   };
   
@@ -44,17 +44,9 @@ class Todo extends React.Component {
   
     this.setState({ items: newItemList });
   };
-  
-  onClickDeleteItem = id => {
-    const newItemList = this.state.items.filter(item => {
-      return item.id !== id;
-    })
-  
-    this.setState({ items: newItemList });
-  };
-  
+
   onClickAddItem = value => {
-    const perebor = this.state.items.filter(item => item.value == value)
+    const perebor = this.state.items.filter(item => item.value === value)
     if (perebor.length === 0) {
       this.setState(state => ({
         items: [
@@ -73,18 +65,84 @@ class Todo extends React.Component {
     }
   };
   
+  onClickDeleteItem = id => {
+    const newItemList = this.state.items.filter(item => {
+      return item.id !== id;
+    })
+  
+    this.setState({ items: newItemList });
+  };
+
+  onClickCompletedItems = () => {
+    const newItemList = this.state.items.filter(item => {
+      return item.isDone === true;
+    })
+
+    this.setState({ items: newItemList });
+  };
+
   render() {
-    const numberOfCompleted = this.state.items.filter(item => item.isDone === true);
-    const numberOfUncompleted = this.state.items.filter(item => item.isDone === false);
-      
+    const allItems = this.state.items;
+    const completedItems = this.state.items.filter(item => item.isDone === true);
+    const uncompletedItems = this.state.items.filter(item => item.isDone === false);
+
+    let items;
+    switch (this.state.selectedMenuItem) {
+      case "all":
+        items = allItems;
+        break;
+      case "completedItems":
+        items = completedItems;
+        break;
+      case "uncompletedItems":
+        items = uncompletedItems;
+        break;
+    }
+
     return (
       <section className={styles.section}>
         <Card className={styles.todos}>
           <div className={styles.head}>
             <h1 className={styles.head__title}>Список моих дел</h1>
-            <TodosMenu numberOfCompleted={numberOfCompleted.length} numberOfUncompleted={numberOfUncompleted.length} />
+            <div className={styles.menu}>
+              <button
+                onClick={() => {
+                  this.setState({
+                    selectedMenuItem: "completedItems",
+                  });
+                }} 
+                className={styles['menu__is-done']}
+              >
+                Завершённые 
+                <span className={styles['menu__is-done_span']}>
+                  {completedItems.length}
+                </span>
+              </button>
+              <button 
+                onClick={() => {
+                  this.setState({
+                    selectedMenuItem: "uncompletedItems",
+                  });
+                }} 
+                className={styles['menu__isnt-done']}>
+                  Незавершённые 
+                  <span className={styles['menu__isnt-done_span']}>
+                    {uncompletedItems.length}
+                  </span>
+                </button>
+              <button
+                onClick={() => {
+                  this.setState({
+                    selectedMenuItem: "all",
+                  });
+                }} 
+                className={styles.menu__all}
+              >
+                Все
+              </button>
+            </div>
           </div>
-          <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDeleteItem={this.onClickDeleteItem} />
+          <ItemList items={items} onClickDone={this.onClickDone} onClickDeleteItem={this.onClickDeleteItem} />
           <InputItem items={this.state.items} classNameForInputWrapp={this.state.classNameForInputWrapp} onClickAddItem={this.onClickAddItem} />
         </Card>
       </section>);

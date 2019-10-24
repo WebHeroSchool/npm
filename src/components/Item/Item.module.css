@@ -18,6 +18,8 @@
 }
 
 .value {
+  display: flex;
+  align-items: center;
   position: relative;
   padding-left: 40px;
   min-height: 17px;
@@ -54,4 +56,10 @@
 .value:hover,
 .button_delete:hover {
   cursor: pointer;
+}
+
+@media (max-width: 440px) {
+  .value {
+    font-size: 12px;
+  } 
 }

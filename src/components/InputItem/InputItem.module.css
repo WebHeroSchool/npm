@@ -4,12 +4,16 @@
   align-items: center;
 }
 
-.wrap__input {
+.wrap__error-empty-textt {
+  width: 85%;
+}
+
+.input {
   display: flex;
   align-items: center;
   margin-right: 8px;
   padding: 9.5px 13px;
-  width: 566px;
+  width: 94%;
   border: 1px solid #CCCCCC;
   border-radius: 29px;
   outline: none;
@@ -73,4 +77,16 @@
   cursor: pointer;
   border: none;
   outline: none;
+}
+
+@media (max-width: 600px) {
+  .input {
+    width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .input {
+    width: 85%;
+  }
 }

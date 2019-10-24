@@ -25,15 +25,17 @@ class InputItem extends React.Component {
 
   render() {
     const { classNameForInputWrapp } = this.props;
+    
     return (
       <div className={styles.wrap}>
-        <div id='testt' className={classnames({
+        <div className={classnames({
+          [styles['wrap__error-empty-textt']]: true,
           [styles['wrap__error-empty-text']]: this.state.isError,
           [styles['wrap__error-repeat-case']]: classNameForInputWrapp,
         })}>
           <input
             placeholder={'Введите текст'}
-            className={styles.wrap__input}
+            className={styles.input}
             value={this.state.inputValue}
             onChange={event =>
               this.setState({
