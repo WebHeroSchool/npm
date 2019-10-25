@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/styles": "^4.4.3",
+    "@octokit/rest": "^16.33.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
