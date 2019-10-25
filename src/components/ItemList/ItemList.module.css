@@ -1,7 +1,7 @@
 .list {
   margin: 0 auto 20px auto;
-  height: 455px;
   padding: 0 28px;
+  height: 455px;
   list-style: none;
   overflow-y: auto;
 }
@@ -12,9 +12,9 @@
   justify-content: flex-end;
   align-items: center;
   margin: 0 auto 20px auto;
-  height: 455px;
   padding: 0 28px;
-  background: url(./empty-list.png) center bottom 180px no-repeat;
+  height: 455px;
+  background: url(../../img/error.png) center bottom 180px no-repeat;
 }
 
 .empty-list__text {

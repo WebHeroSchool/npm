@@ -1,8 +1,8 @@
 import React from 'react';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
-import styles from './Todo.module.css';
 import Card from '@material-ui/core/Card';
+import styles from './Todo.module.css';
 
 class Todo extends React.Component {
   state = {
@@ -10,22 +10,22 @@ class Todo extends React.Component {
       {
         id: 1,
         value: 'Изучить React',
-        isDone: false
+        isDone: false,
       },
       {
         id: 2,
         value: 'Подготовиться к собеседованию',
-        isDone: false
+        isDone: false,
       },
       {
         id: 3,
         value: 'Найти работу!',
-        isDone: false
+        isDone: false,
       },
       {
         id: 4,
         value: 'Тест',
-        isDone: true
+        isDone: true,
       },
     ],
     count: 4,
@@ -37,17 +37,18 @@ class Todo extends React.Component {
     const newItemList = this.state.items.map(item => {
       if (item.id === id) {
         item.isDone = !item.isDone;
-      }
+      };
   
       return item;
-    })
+    });
   
     this.setState({ items: newItemList });
   };
 
   onClickAddItem = value => {
-    const perebor = this.state.items.filter(item => item.value === value)
-    if (perebor.length === 0) {
+    const item = this.state.items.filter(item => item.value === value);
+
+    if (item.length === 0) {
       this.setState(state => ({
         items: [
           ...state.items,
@@ -61,20 +62,20 @@ class Todo extends React.Component {
         classNameForInputWrapp: false,
       }));
     } else {
-      this.setState({ classNameForInputWrapp: true })
+      this.setState({ classNameForInputWrapp: true });
 
       setTimeout(() => {
         this.setState({
           classNameForInputWrapp: false
         })
-      }, 2000)
-    }
+      }, 1500);
+    };
   };
   
   onClickDeleteItem = id => {
     const newItemList = this.state.items.filter(item => {
       return item.id !== id;
-    })
+    });
   
     this.setState({ items: newItemList });
   };
@@ -95,7 +96,9 @@ class Todo extends React.Component {
       case "uncompletedItems":
         items = uncompletedItems;
         break;
-    }
+      default:
+        items = allItems;
+    };
 
     return (
       <section className={styles.section}>
@@ -116,7 +119,7 @@ class Todo extends React.Component {
                   {completedItems.length}
                 </span>
               </button>
-              <button 
+              <button
                 onClick={() => {
                   this.setState({
                     selectedMenuItem: "uncompletedItems",
@@ -143,7 +146,8 @@ class Todo extends React.Component {
           <ItemList items={items} onClickDone={this.onClickDone} onClickDeleteItem={this.onClickDeleteItem} />
           <InputItem items={this.state.items} classNameForInputWrapp={this.state.classNameForInputWrapp} onClickAddItem={this.onClickAddItem} />
         </Card>
-      </section>);
+      </section>
+    );
   };
 };
 

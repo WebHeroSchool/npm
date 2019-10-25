@@ -33,24 +33,24 @@
 }
 
 .checkbox + .value::before {
+  content: '';
   position: absolute;
   left: 13px;
-  content: '';
-  width: 17px;
   height: 16px;
-  background: url(./checkbox.png) center center no-repeat;
+  width: 17px;
+  background: url(../../img/checkbox.png) center center no-repeat;
 }
 
 .checkbox:checked + .value:before {
-  background: url(./checkbox-checked.png) center center no-repeat;
+  background: url(../../img/checkbox-checked.png) center center no-repeat;
 }
 
 .button_delete {
-  width: 25px;
   height: 16px;
+  width: 25px;
   border: none;
   outline: none;
-  background: url(./delete.png) left center no-repeat;
+  background: url(../../img/delete.png) left center no-repeat;
 }
 
 .value:hover,

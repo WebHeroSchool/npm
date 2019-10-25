@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './InputItem.module.css';
 import classnames from 'classnames';
+import styles from './InputItem.module.css';
 
 class InputItem extends React.Component {
   state = {
@@ -12,21 +12,21 @@ class InputItem extends React.Component {
     if (this.state.inputValue === '') {
       this.setState({
         isError: true,
-      })
+      });
 
       setTimeout(() => {
         this.setState({
           isError: false
-        })
-      }, 2000)
+        });
+      }, 1500);
     } else {
       this.setState({
         inputValue: '',
         isError: false
-      })
+      });
   
       this.props.onClickAddItem(this.state.inputValue);
-    }
+    };
   };
 
   render() {
@@ -35,7 +35,7 @@ class InputItem extends React.Component {
     return (
       <div className={styles.wrap}>
         <div className={classnames({
-          [styles['wrap__error-empty-textt']]: true,
+          [styles['wrap__text']]: true,
           [styles['wrap__error-empty-text']]: this.state.isError,
           [styles['wrap__error-repeat-case']]: classNameForInputWrapp,
         })}>
@@ -53,7 +53,7 @@ class InputItem extends React.Component {
         <button className={styles.wrap__button} onClick={this.onButtonClick}></button>
       </div>
     );
-  }
+  };
 };
 
 export default InputItem;

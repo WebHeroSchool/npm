@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.wrap__error-empty-textt {
+.wrap__text {
   width: 85%;
 }
 
@@ -73,7 +73,7 @@
 .wrap__button {
   height: 36px;
   width: 36px;
-  background: url(./add.png) center center no-repeat;
+  background: url(../../img/add-button.png) center center no-repeat;
   cursor: pointer;
   border: none;
   outline: none;

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Item.module.css';
 
 const Item = ({ value, isDone, onClickDone, id, onClickDeleteItem}) => {
@@ -24,15 +23,6 @@ const Item = ({ value, isDone, onClickDone, id, onClickDeleteItem}) => {
       />
     </div>
   );
-};
-
-Item.defaultProps = {
-  value: "Дело было потеряно!",
-  isDone: true
-};
-
-Item.propTypes = {
-  isDone: PropTypes.bool.isRequired
 };
 
 export default Item;

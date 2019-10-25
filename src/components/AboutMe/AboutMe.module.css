@@ -15,19 +15,19 @@
   margin: auto;
   height: 100px;
   width: 100px;
-  background: url(./gif/preloader.gif);
+  background: url(../../img/preloader.gif);
   background-size: contain;
 }
 
 .user__wrapp {
   margin: auto;
-  width: 100%;
   padding: 0 8px;
+  width: 100%;
 }
 
 .user-error {
-  max-width: 522px;
   margin: 0 auto;
+  max-width: 522px;
 }
 
 .info {
@@ -55,6 +55,10 @@
   height: 45px;
   font-size: 28px;
   font-weight: bold;
+}
+
+.description__login:hover {
+  color: #356EFF;
 }
 
 .description__bio {
@@ -125,7 +129,7 @@
   align-items: center;
   height: 293px;
   width: 100%;
-  background: url(./qwe.png) center bottom 71px no-repeat;
+  background: url(../../img/error.png) center bottom 71px no-repeat;
 }
 
 .error__text {
@@ -166,9 +170,9 @@
   display: flex;
   align-items: center;
   margin: 0 8px 8px 0;
+  height: 54px;
   border: 2px solid #CCCCCC;
   border-radius: 10px;
-  height: 54px;
 }
 
 .info-about-repository-wrapped {
@@ -177,9 +181,9 @@
   justify-content: space-between;
   margin: 0 auto;
   padding: 0 12px;
-  border-radius: 10px;
   height: 36px;
   width: 100%;
+  border-radius: 10px;
 }
 
 .info-about-repository {
@@ -192,6 +196,10 @@
 .info-about-repository-wrapped__link {
   font-size: 14px;
   font-weight: bold;
+}
+
+.info-about-repository-wrapped__link:hover {
+  color: #356EFF;
 }
 
 .info-about-repository__null-icon {
@@ -239,7 +247,7 @@
   justify-content: center;
   height: 100%;
   width: 45px;
-  background: url(./star.png) left center no-repeat;
+  background: url(../../img/star.png) left center no-repeat;
 }
 
 .info-about-repository__forks {
@@ -248,7 +256,7 @@
   justify-content: center;
   height: 100%;
   width: 45px;
-  background: url(./forks.png) left center no-repeat;
+  background: url(../../img/forks.png) left center no-repeat;
 }
 
 .info-about-repository__update {
@@ -280,5 +288,11 @@
 
   .works__title {
     padding-left: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .info-about-repository__update {
+    display: none;
   }
 }

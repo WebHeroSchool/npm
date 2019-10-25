@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './AboutMe.module.css';
 import Octokit from '@octokit/rest';
 import Card from '@material-ui/core/Card';
+import styles from './AboutMe.module.css';
 
 const  octokit = new  Octokit();
 
@@ -14,7 +14,7 @@ class AboutMe extends React.Component {
     ErrorTextUser: '',
     User: [],
     repoList: [],
-  }
+  };
 
   componentDidMount() {
     octokit.users.getByUsername({
@@ -35,12 +35,12 @@ class AboutMe extends React.Component {
     });
 
     octokit.repos.listForUser({
-      username: 'AldeOwl',
+      username: 'lunar616',
     }).then(({ data }) => {
       this.setState({
         repoList: data,
         isLoadingRepositories: false,
-      })
+      });
     })
     .catch(() => {
       this.setState({ 
@@ -60,7 +60,7 @@ class AboutMe extends React.Component {
               <div className={styles.user__wrapp}>
                 { isErrorUser ? <div className={styles['user-error']}>{ErrorTextUser}</div> :
                   <div className={styles.info}>
-                    <img className={styles.info__avatar} src={User.avatar_url}></img>
+                    <img className={styles.info__avatar} src={User.avatar_url} alt='avatar'></img>
                     <div className={styles.description}>
                       <a className={styles.description__login} href={User.login}>Никита Родионов</a>
                       <p className={styles.description__bio}>{User.bio}</p>

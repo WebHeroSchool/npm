@@ -14,7 +14,7 @@ const App = () => (
             exact
             className={styles.link}
             activeStyle={{
-              color: '#FFF',
+              color: '#FFF',  
               background: '#356EFF',
               boxShadow: '0px 0px 3px rgba(0, 0, 0, 0.25)',
               borderRadius: '37px',
