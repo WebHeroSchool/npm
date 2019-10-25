@@ -1,14 +1,28 @@
 import React from 'react';
-import classnames from 'classnames';
-import styles from '../App/App.module.css';
+import styles from './Item.module.css';
 
-const Item = ({ value, isDone }) => (<span className={
-  classnames({
-    [styles.item]: true,
-    [styles.done]: isDone
-  })
-}>
-  {value}
-</span>);
+const Item = ({ value, isDone, onClickDone, id, onClickDeleteItem}) => {
+  return (
+    <div className={styles.wrapp}>
+      <input
+        type='checkbox'
+        className={styles.checkbox}
+        id={id}
+        defaultChecked={isDone}
+      />
+      <label
+        htmlFor={id}
+        className={styles.value}
+        onClick={() => onClickDone(id)}
+      >
+        {value}
+      </label>
+      <button
+        className={styles['button_delete']}
+        onClick={() => onClickDeleteItem(id)}
+      />
+    </div>
+  );
+};
 
 export default Item;

@@ -1,15 +1,33 @@
-.wrap {
-  margin: auto;
-  height: 400px;
-  width: 350px;
-  font-family: 'Comic Sans MS';
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 8px;
+  max-width: 700px;
+  font-family: "Roboto" ,  sans-serif;
 }
 
-.title {
-  font-size: 50px;
-  color: #696969;
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 66px;
+  background: url(../../img/whs.png) left top 10px no-repeat;
+  background-size: 124px 32px;
 }
 
-.done {
-  color: #c4c4c4;
+.link {
+  padding: 13px 32px;
+  height: 19px;
+  font-size: 16px;
+  font-weight: bold;
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 520px) {
+  .header {
+    background: none;
+  }
 }
