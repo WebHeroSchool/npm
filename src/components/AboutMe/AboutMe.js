@@ -62,7 +62,7 @@ class AboutMe extends React.Component {
                   <div className={styles.info}>
                     <img className={styles.info__avatar} src={User.avatar_url} alt='avatar'></img>
                     <div className={styles.description}>
-                      <a className={styles.description__login} href={User.login}>Никита Родионов</a>
+                      <p className={styles.description__login}>Никита Родионов</p>
                       <p className={styles.description__bio}>{User.bio}</p>
                       <a className={styles.description__mail} 
                         href='mailto: nikita.rodionov.dev@yandex.ru'>
