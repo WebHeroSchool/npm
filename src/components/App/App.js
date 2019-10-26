@@ -1,31 +1,48 @@
 import React from 'react';
-import InputItem from '../InputItem/InputItem';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import Todo from '../Todo/Todo';
+import AboutMe from '../AboutMe/AboutMe';
 import styles from './App.module.css';
 
-const App = () => {
-  const items = [
-    {
-      value: 'Изучить React',
-      isDone: false
-    },
-    {
-      value: 'Подготовиться к собеседованию',
-      isDone: false
-    },
-    {
-      value: 'Найти работу!',
-      isDone: false
-    }
-  ];
-
-  return (
-  <div className={styles.wrap}>
-    <h1 className={styles.title}>Важные дела:</h1>
-    <InputItem />
-    <ItemList items={items} />
-    <Footer count={3} />
-  </div>)};
+const App = () => (
+  <div className={styles.app}>
+    <Router>
+      <header className={styles.header}>
+        <nav>
+          <NavLink
+            to='/'
+            exact
+            className={styles.link}
+            activeStyle={{
+              color: '#FFF',  
+              background: '#356EFF',
+              boxShadow: '0px 0px 3px rgba(0, 0, 0, 0.25)',
+              borderRadius: '37px',
+            }}
+          >
+            Обо мне
+          </NavLink>
+          <NavLink
+            to='/todo'
+            className={styles.link} 
+            activeStyle={{
+              color: '#FFF',
+              background: '#356EFF',
+              boxShadow: '0px 0px 3px rgba(0, 0, 0, 0.25)',
+              borderRadius: '37px',
+            }}
+          >
+            Дела
+          </NavLink>
+        </nav>
+      </header>
+  
+      <main>
+        <Route path='/' exact component={AboutMe} />
+        <Route path='/todo' component={Todo} />
+      </main>
+    </Router>
+  </div>
+);
 
 export default App;
