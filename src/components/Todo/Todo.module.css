@@ -72,6 +72,10 @@
 }
 
 @media (max-width: 590px) {
+  .section {
+    height: 450px;
+  }
+
   .head {
     display: flex;
     flex-direction: column;

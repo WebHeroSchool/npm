@@ -27,3 +27,9 @@
   color: #999999;
   font-size: 14px;
 }
+
+@media (max-width: 590px) {
+  .list {
+    height: 250px;
+  }
+}
