@@ -5,7 +5,7 @@
   margin-bottom: 8px;
   margin-right: 8px;
   min-height: 36px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #CCC;
   border-radius: 41px;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .checkbox:checked + .value {
-  color: #CCCCCC;
+  color: #CCC;
   text-decoration: line-through;
 }
 
@@ -51,6 +51,7 @@
   border: none;
   outline: none;
   background: url(../../img/delete.png) left center no-repeat;
+  background-size: 16px 16px;
 }
 
 .value:hover,
@@ -61,5 +62,6 @@
 @media (max-width: 440px) {
   .value {
     font-size: 12px;
+    width: 95%;
   } 
 }

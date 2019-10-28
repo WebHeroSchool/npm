@@ -55,14 +55,14 @@
 .menu__is-done:focus,
 .menu__isnt-done:focus,
 .menu__all:focus {
-  color: #FFFFFF;
+  color: #FFF;
   background: #356EFF;
   border-radius: 23px;
 }
 
 .menu__is-done:focus .menu__is-done_span,
 .menu__isnt-done:focus .menu__isnt-done_span {
-  color: #FFFFFF;
+  color: #FFF;
 }
  
 @media (max-width: 630px) {
