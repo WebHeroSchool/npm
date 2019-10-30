@@ -20,7 +20,7 @@ const App = () => (
           <NavLink
             to='/todo'
             className={styles.header__link}
-            activeClassName={styles['header__todos']}
+            activeClassName={styles.header__todos}
           >
             Дела
           </NavLink>
