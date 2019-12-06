@@ -87,13 +87,13 @@ class Todo extends React.Component {
 
     let items;
     switch (this.state.selectedMenuItem) {
-      case "all":
+      case 'all':
         items = allItems;
         break;
-      case "completedItems":
+      case 'completedItems':
         items = completedItems;
         break;
-      case "uncompletedItems":
+      case 'uncompletedItems':
         items = uncompletedItems;
         break;
       default:
@@ -109,7 +109,7 @@ class Todo extends React.Component {
               <button
                 onClick={() => {
                   this.setState({
-                    selectedMenuItem: "completedItems",
+                    selectedMenuItem: 'completedItems',
                   });
                 }} 
                 className={styles['menu__is-done']}
@@ -122,7 +122,7 @@ class Todo extends React.Component {
               <button
                 onClick={() => {
                   this.setState({
-                    selectedMenuItem: "uncompletedItems",
+                    selectedMenuItem: 'uncompletedItems',
                   });
                 }} 
                 className={styles['menu__isnt-done']}>
@@ -134,7 +134,7 @@ class Todo extends React.Component {
               <button
                 onClick={() => {
                   this.setState({
-                    selectedMenuItem: "all",
+                    selectedMenuItem: 'all',
                   });
                 }} 
                 className={styles.menu__all}

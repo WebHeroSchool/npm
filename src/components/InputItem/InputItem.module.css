@@ -14,7 +14,7 @@
   margin-right: 8px;
   padding: 9.5px 13px;
   width: 94%;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #CCC;
   border-radius: 29px;
   outline: none;
 }
@@ -30,7 +30,7 @@
   padding: 10px;
   width: 170px;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #FFF;
   background-color: #356EFF;
   border-radius: 6px;
   transform: translateY(-130%);
@@ -51,7 +51,7 @@
   padding: 10px;
   width: 170px;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #FFF;
   background-color: #356EFF;
   border-radius: 6px;
   transform: translateY(-130%);
@@ -74,6 +74,7 @@
   height: 36px;
   width: 36px;
   background: url(../../img/add-button.png) center center no-repeat;
+  background-size: contain;
   cursor: pointer;
   border: none;
   outline: none;
@@ -88,5 +89,13 @@
 @media (max-width: 400px) {
   .input {
     width: 85%;
+  }
+
+  .wrap__error-repeat-case::before {
+    transform: translateY(-125%);
+  }
+
+  .wrap__error-empty-text::before {
+    transform: translateY(-120%);
   }
 }

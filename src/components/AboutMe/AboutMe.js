@@ -66,34 +66,34 @@ class AboutMe extends React.Component {
                       <p className={styles.description__bio}>{User.bio}</p>
                       <a className={styles.description__mail} 
                         href='mailto: nikita.rodionov.dev@yandex.ru'>
-                        <ion-icon name="mail" />
+                        <ion-icon name='mail' />
                         nikita.rodionov.dev@yandex.ru
                       </a>
                       <a className={styles.description__tg} 
                         href='tg://resolve?domain=lunar616'>
-                        <ion-icon name="send" />
+                        <ion-icon name='send' />
                         +7 (999) 850 24 52
                       </a>
                     </div>
                     <div className={styles.contacts}>
-                      <a href="https://github.com/lunar616"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <a href='https://github.com/lunar616'
+                        target='_blank'
+                        rel='noopener noreferrer'
                       >
-                        <ion-icon name="logo-github"></ion-icon>
+                        <ion-icon name='logo-github'></ion-icon>
                       </a>
-                      <a href="https://vk.com/lunar616"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <a href='https://vk.com/lunar616'
+                        target='_blank'
+                        rel='noopener noreferrer'
                       >
-                        <ion-icon name="logo-vk"></ion-icon>
+                        <ion-icon name='logo-vk'></ion-icon>
                       </a>
                       <a
-                        href="https://www.linkedin.com/in/lunar616"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href='https://www.linkedin.com/in/lunar616'
+                        target='_blank'
+                        rel='noopener noreferrer'
                       >
-                        <ion-icon name="logo-linkedin"></ion-icon>
+                        <ion-icon name='logo-linkedin'></ion-icon>
                       </a>
                     </div>
                   </div>
@@ -117,7 +117,14 @@ class AboutMe extends React.Component {
                       <ul key={repo.id}>
                         <div className={styles.repository}>
                           <div className={styles['info-about-repository-wrapped']}>
-                            <a href={repo.svn_url} className={styles['info-about-repository-wrapped__link']}>{repo.name}</a>
+                            <a 
+                              href={repo.svn_url} 
+                              className={styles['info-about-repository-wrapped__link']}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                            >
+                              {repo.name}
+                            </a>
                             <div className={styles['info-about-repository']}>
                               <div className={styles[`info-about-repository__${repo.language}-icon`.toLowerCase()]}></div>
                               <p className={styles['info-about-repository__language']}>{repo.language}</p>

@@ -21,8 +21,8 @@ const ItemList = ({ items, onClickDone, onClickDeleteItem }) => {
   } else {
     return (
       <div className={styles['empty-list']}>
-        <p className={styles['empty-list__text']}>Что-то пошло не так...</p>
-        <p className={styles['empty-list__subtext']}>Попробуйте загрузить ещё раз</p>
+        <p className={styles['empty-list__text']}>Вы ещё не добавили ни одной задачи</p>
+        <p className={styles['empty-list__subtext']}>Сделайте это прямо сейчас!</p>
       </div>
     );
   };
